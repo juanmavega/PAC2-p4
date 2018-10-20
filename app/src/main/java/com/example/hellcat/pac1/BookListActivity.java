@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.example.hellcat.pac1.model.BookContent;
 import com.example.hellcat.pac1.model.BookItem;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -36,6 +38,8 @@ public class BookListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
+    private FirebaseAuth mAuth;         //añadimos las variables para firebase
+    private FirebaseDatabase database;
 
     /*
      * Crea la activity usando el layout activity_book_list. Se crea una barra superior con una toolbar
@@ -45,6 +49,10 @@ public class BookListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance ();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

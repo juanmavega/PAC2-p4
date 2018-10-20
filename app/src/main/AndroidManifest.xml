@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hellcat.pac1">
+
+    <!--
+    añado permiso de uso de internet
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <!--
     hemos creado el package de la aplioación. Se indican los valores por defecto y las dos actividades
     que va a tener, BookItem y BookDetail.
