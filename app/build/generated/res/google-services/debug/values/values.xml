@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">944469263184-hst36j848n6mfhia413ghibj526itmld.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://practica-uoc-juanma.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">944469263184</string>
+    <string name="google_api_key" translatable="false">AIzaSyBFNxh-_rAwW2MUi9xcoLsbaQ2E2Ac-cpA</string>
+    <string name="google_app_id" translatable="false">1:944469263184:android:22544d9e5ffaa796</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBFNxh-_rAwW2MUi9xcoLsbaQ2E2Ac-cpA</string>
+    <string name="google_storage_bucket" translatable="false">practica-uoc-juanma.appspot.com</string>
+    <string name="project_id" translatable="false">practica-uoc-juanma</string>
+</resources>

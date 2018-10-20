@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "944469263184",
+    "firebase_url": "https://practica-uoc-juanma.firebaseio.com",
+    "project_id": "practica-uoc-juanma",
+    "storage_bucket": "practica-uoc-juanma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944469263184:android:22544d9e5ffaa796",
+        "android_client_info": {
+          "package_name": "com.example.hellcat.pac1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944469263184-hst36j848n6mfhia413ghibj526itmld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFNxh-_rAwW2MUi9xcoLsbaQ2E2Ac-cpA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
