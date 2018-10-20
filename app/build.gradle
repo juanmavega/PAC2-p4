@@ -31,8 +31,11 @@ dependencies {
     /**
      *  añadimos esta línea y la siguiente para que haya compatibilidad con firebase.
      *  La erramienta daba problemas al hacerlo automáticamente.
+     *  Se añade también la autentificación y el uso de real database.
      */
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.1:15.0.0'
+    implementation 'com.google.firebase:firebase-database:16.0.1:15.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
