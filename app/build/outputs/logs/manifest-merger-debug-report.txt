@@ -1,0 +1,135 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+MERGED from [com.android.support:design:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\391dcdb8c13ce018accd510f99265b9a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\6661f37804dc9625302dd43c0ad2a423\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\718de8a5b261f257541c96b5e1814cfa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\2be5535697c057d68c97fb91f40d1779\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.0.aar\e940b2a456e63f52b47f3ecab6385f64\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\58f8078d76c226161f850ee86e7d3e33\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\a03d1c01491412a24541cc94532c674b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\567bfff417b7ec340b67a9d5c198045d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a3a4b6f919ff1e9f82d4d95d49f2c69a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\a03ffe9863f2e3c2847a585ec0326020\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\44771ce8639ed57259270113200a4111\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\b6bfe7e8278be6464e933239c800625d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e03c8001f5ca0132ace779636bfe2f75\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:17:1-30:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+	package
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:1-38:12
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:10:5-36:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:16:9-40
+activity#com.example.hellcat.pac1.BookListActivity
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:17:9-26:20
+	android:label
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:19:13-45
+	android:theme
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:20:13-56
+	android:name
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:18:13-45
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:24:27-74
+activity#com.example.hellcat.pac1.BookDetailActivity
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:27:9-35:20
+	android:parentActivityName
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:30:13-59
+	android:label
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:29:13-54
+	android:theme
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:31:13-56
+	android:name
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:28:13-47
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:32:13-34:77
+	android:value
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:34:17-74
+	android:name
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml:33:17-63
+uses-sdk
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\391dcdb8c13ce018accd510f99265b9a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\design-27.0.0.aar\391dcdb8c13ce018accd510f99265b9a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\6661f37804dc9625302dd43c0ad2a423\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.0.aar\6661f37804dc9625302dd43c0ad2a423\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\718de8a5b261f257541c96b5e1814cfa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.0.aar\718de8a5b261f257541c96b5e1814cfa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\2be5535697c057d68c97fb91f40d1779\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.0.0.aar\2be5535697c057d68c97fb91f40d1779\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.0.aar\e940b2a456e63f52b47f3ecab6385f64\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.0.aar\e940b2a456e63f52b47f3ecab6385f64\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\58f8078d76c226161f850ee86e7d3e33\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.0.aar\58f8078d76c226161f850ee86e7d3e33\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\a03d1c01491412a24541cc94532c674b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.0.aar\a03d1c01491412a24541cc94532c674b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\567bfff417b7ec340b67a9d5c198045d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.0.aar\567bfff417b7ec340b67a9d5c198045d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a3a4b6f919ff1e9f82d4d95d49f2c69a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.0.aar\a3a4b6f919ff1e9f82d4d95d49f2c69a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\a03ffe9863f2e3c2847a585ec0326020\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.0.aar\a03ffe9863f2e3c2847a585ec0326020\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\44771ce8639ed57259270113200a4111\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.0.aar\44771ce8639ed57259270113200a4111\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\b6bfe7e8278be6464e933239c800625d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\transition-27.0.0.aar\b6bfe7e8278be6464e933239c800625d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e03c8001f5ca0132ace779636bfe2f75\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.0.aar\e03c8001f5ca0132ace779636bfe2f75\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		ADDED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\src\main\AndroidManifest.xml
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Hellcat\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\39816b34291d4f7df1ad695aaa612d23\AndroidManifest.xml:26:13-58
