@@ -17,12 +17,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.hellcat.pac1.model.BookContent;
+import com.example.hellcat.pac1.model.BookContent2;
 import com.example.hellcat.pac1.model.BookItem;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -43,7 +48,8 @@ public class BookListActivity extends AppCompatActivity {
     private boolean mTwoPane;
     private FirebaseAuth mAuth;         //añadimos las variables para firebase
     private FirebaseDatabase database;
-    private String TAG="validando--->>>";
+    private DatabaseReference dbreference;
+    private String TAG = "validando--->>>";
 
     /*
      * Crea la activity usando el layout activity_book_list. Se crea una barra superior con una toolbar
@@ -71,43 +77,79 @@ public class BookListActivity extends AppCompatActivity {
          */
         if (findViewById(R.id.book_detail_container) != null) {
             /*
-            * Busca si existe el book_detail_container que sólo estará presente en formato tablet
-            * para saber si la aplicación es de tablet o no e inicializar la variable.
+             * Busca si existe el book_detail_container que sólo estará presente en formato tablet
+             * para saber si la aplicación es de tablet o no e inicializar la variable.
              */
             mTwoPane = true;
         }
         /*
          *se crea un recyclerview usando el formato book_list
          */
+
+        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        dbreference =database.getReference();
+        // Sólo funciona si se entra con un usuario diferente del que lo ha creado!!!
+        validar("juanma.atlantica1@gmail.com", "1234567890");
         View recyclerView = findViewById(R.id.book_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
-        mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance ();
-        validar("juanma.atlantica1@gmail.com","1234567890");
     }
-private void validar (String email, String password){
-        Log.d(TAG,"pasando por validar");
-    mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                    // If sign in fails, display a message to the user. If sign in succeeds
-                    // the auth state listener will be notified and logic to handle the
-                    // signed in user can be handled in the listener.
-                    if (!task.isSuccessful()) {
-                        Log.w(TAG, "signInWithEmail:failed", task.getException());
+    private void validar(String email, String password) {
+        Log.d(TAG, "pasando por validar");
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithEmail:failed", task.getException());
+                        }else {
+                            // creo el addValueEventListener para ir controlando cada vez que se cambian
+                            // los datos.
+                            pedirlistalibros();
+                        }
+                        // ...
                     }
+                });
+    }
+    void pedirlistalibros(){
 
-                    // ...
+
+        dbreference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    //con este segundo getchildren debería estar ya a nivel de libro.
+                    for (DataSnapshot postSnapshot2: postSnapshot.getChildren()) {
+                        Log.d(TAG, "paso por datasnapshot.getchildren");
+                        String prueba1 = postSnapshot2.child("author").getValue().toString();
+                        String prueba2 = postSnapshot2.child("title").getValue().toString();
+
+                        Log.d(TAG, "paso por datasnapshot--->>" + prueba1);
+                        Log.d(TAG, "paso por datasnapshot--->>" + prueba2);
+                    }
                 }
-            });
-}
-    private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.d(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+        }
+
+private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, BookContent.ITEMS, mTwoPane));
+        Log.d(TAG,"paso por setuprecyclerview");
     }
 
     public static class SimpleItemRecyclerViewAdapter
@@ -124,6 +166,8 @@ private void validar (String email, String password){
         /*
          * acciones que se llevan a cabo cuando se ha hecho click sobre uno de los elementos
          */
+
+
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,6 +213,7 @@ private void validar (String email, String password){
             mParentActivity = parent;
             mTwoPane = twoPane;
         }
+
 
         /*
          * sobreescribimos getItemViewType para que nos devuelva si el layout va a ser par o impar.

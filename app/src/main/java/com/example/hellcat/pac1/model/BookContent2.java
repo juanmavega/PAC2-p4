@@ -1,8 +1,5 @@
 package com.example.hellcat.pac1.model;
 
-import android.util.Log;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,7 +11,7 @@ import java.util.Map;
  * Creamos la clase BookContent para los procedimientos de creación
  * de la lista de BookItem y su Map
  */
-public class BookContent {
+public class BookContent2 {
 
     /**
      * Creación de ITEMS como objeto que podrá ser accedido por el resto de clases como variable constante.
@@ -34,7 +31,6 @@ public class BookContent {
          * solucionado el tema de la fecha usando calendario. Se crea una instancia de calendario, ya que se trata de
          * una interfaz. Metemos año, mes y día y finalmente hacemos un getTime que nos da la Date correspondiente.
          */
-        Log.d("validando--->>>","paso por additem");
         addItem(new BookItem(1, "El mundo invertido", "Christopher Priest", creaDate(2018, 10, 2), "La ciudad avanza por medio de raíles, surcando una tierra devastada llena de tribus hostiles. Los raíles deben ir colocándose delante de ella al tiempo que se progresa y ser retirados cuidadosamente tras su estela. Los ríos y las montañas suponen un obstáculo casi insalvable para el ingenio de los técnicos de la ciudad. Pero si se detiene su movimiento, la ciudad va cayendo en el campo gravitacional destructor que ha transformado la vida en la Tierra. La única alternativa a la muerte es el avance. Helward Mann, un miembro de la élite de la ciudad, sabe mejor que nadie que su existencia pende de un hilo: está a punto de descubrir que el mundo exterior es infinitamente más extraño que su propio entorno, que tan bien cree conocer.", "imagen1"));
         addItem(new BookItem(2, "El Hobbit", "J.R.R. Tolkien", creaDate(2017, 12, 2), "Bilbo Baggins lleva una vida sencilla con sus compañeros hobbits en la comarca, hasta que el mago Gandalf llega y lo convence de unirse a un grupo de enanos para recuperar el reino de Erebor. El viaje lleva a Bilbo en un camino a través de tierras peligrosas llenas de orcos, goblins y otras amenazas, además de su encuentro con Gollum y un sencillo anillo de oro que está unido al destino de la Tierra Media de una forma que Bilbo no puede imaginarse.", "imagen2"));
         addItem(new BookItem(3, "El tercer brazo", "Larry niven & Jerry Pournelle", creaDate(2005, 6, 30), "Hace un cuarto de siglo, una expedición descubrió el sistema de la Paja y la humanidad tuvo su primer contacto con otra especie inteligente, cuya expansión por la galaxia resultaría letal para los hombres. En aquel entonces, éstos fueron capaces de contener a los alienígenas encerrándolos en su lugar de origen. Pero ahora, la peor pesadilla se ha hecho realidad: los pajeños han superado el cerco, y la voz de alarma llega demasiado tarde. La guerra por el Imperio ha empezado.", "imagen3"));
