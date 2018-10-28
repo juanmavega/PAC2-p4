@@ -1,10 +1,10 @@
 #Internal package file, do not edit.
-#Sat Oct 20 22:18:06 CEST 2018
-1.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+#Sat Oct 27 13:30:40 CEST 2018
+1.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
 2.path=classes.dex
 0.baseType=DIRECTORY
 3.baseType=DIRECTORY
-2.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+2.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
 3.set=DEX
 2.set=DEX
 1.baseType=DIRECTORY
@@ -12,7 +12,7 @@
 count=4
 1.set=DEX
 0.path=classes.dex
-3.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+3.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
 0.set=DEX
 0.base=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
 2.baseType=DIRECTORY
