@@ -21,6 +21,7 @@ public class BookContent {
      * Es la lista de BookItems usada en el recyclerview
      */
     public static final List<BookItem> ITEMS = new ArrayList<BookItem>();
+    private String TAG = "validando--->>>";
 
     /**
      * Como lo anterior, pero en Map se añade una key para fácil localización de un item determinado por su valor de key
@@ -48,7 +49,7 @@ public class BookContent {
     }
 
     static public Date creaDate(Integer anyo, Integer mes, Integer dia) {
-
+        Log.d("validando--->>>", "paso por creadate");
         // al final ha sido posible solucionar el tema del año, pero seguía dando problema los meses que cuentan desde 0,
         // así que se corrige. No se deja tal cual porque si metemos un mes doce hace que la cuenta de años avance uno.
 
@@ -58,6 +59,8 @@ public class BookContent {
         //Date fecha = cal.getTime();
         //Log.e("Pruebas date    ", cal.get(Calendar.YEAR)+"-"+cal.get(Calendar.MONTH)+"-"+cal.get(Calendar.DAY_OF_MONTH));
         //Log.e("Pruebas date dos", new SimpleDateFormat("yyyy-MMM-dd").format(fecha));
+
+        Log.d("validando--->>>", "salgo de creadate");
         return cal.getTime();
 
     }
@@ -67,7 +70,11 @@ public class BookContent {
      *
      */
     public static void addItem(BookItem item) {
+
+        Log.d("validando--->>>", "paso por additem");
         ITEMS.add(item);
         ITEM_MAP.put(Integer.toString(item.getIdentificador()), item);
+
+        Log.d("validando--->>>", "salgo de additem");
     }
 }
