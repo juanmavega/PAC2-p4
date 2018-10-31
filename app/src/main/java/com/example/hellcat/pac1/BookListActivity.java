@@ -31,6 +31,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
+import static com.example.hellcat.pac1.model.BookContent.creaDate;
+
 /**
  * An activity representing a list of Books. This activity
  * has different presentations for handset and tablet-size devices. On
@@ -134,6 +136,7 @@ public class BookListActivity extends AppCompatActivity {
 
                         Log.d(TAG, "paso por datasnapshot--->>" + prueba1);
                         Log.d(TAG, "paso por datasnapshot--->>" + prueba2);
+                        recargaLista(postSnapshot2);
                     }
                 }
             }
@@ -146,7 +149,14 @@ public class BookListActivity extends AppCompatActivity {
             }
         });
         }
+private void recargaLista(DataSnapshot snap){
+        BookContent.addItem(new BookItem(0, snap.child("author").toString(),
+                snap.child("title").toString(),
+                snap.child("description").toString(),
+                creaDate(snap.child("publication_date").toString()),
+                snap.child("url_image").toString());
 
+}
 private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, BookContent.ITEMS, mTwoPane));
         Log.d(TAG,"paso por setuprecyclerview");

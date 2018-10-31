@@ -66,7 +66,7 @@ public class BookContent {
      * rutina que añade los items a la lista ITEMS y al Map ITEM_MAP
      *
      */
-    private static void addItem(BookItem item) {
+    public static void addItem(BookItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(Integer.toString(item.getIdentificador()), item);
     }
