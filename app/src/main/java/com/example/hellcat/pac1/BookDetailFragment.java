@@ -1,7 +1,10 @@
 package com.example.hellcat.pac1;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,10 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hellcat.pac1.model.BookContent;
 import com.example.hellcat.pac1.model.BookItem;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -83,12 +91,40 @@ public class BookDetailFragment extends Fragment {
             /*
              * Aquí busco en los drawables la imagen sin extensión y lo pongo como resource del imageView que hay creada
              */
+            /* esta es la versión antigua sin usar la url real
             int id = getResources().getIdentifier(mItem.getUrl(), "drawable", "com.example.hellcat.pac1");
             ((ImageView) rootView.findViewById(R.id.imageView)).setImageResource(id);
+*/
+            //esto lo tengo que poner en una función aparte. De momento a ver si funciona.
+            new DownloadImageFromInternet((ImageView) rootView.findViewById(R.id.imageView))
+                    .execute(mItem.getUrl());
+        }
+        return rootView;
+    }
+    // Se añaden los métodos asíncronos para la carga de la imagen.
+    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
 
+        public DownloadImageFromInternet(ImageView imageView) {
+            this.imageView = imageView;
         }
 
-        return rootView;
+        protected Bitmap doInBackground(String... urls) {
+            String imageURL = urls[0];
+            Bitmap bimage = null;
+            try {
+                InputStream in = new java.net.URL(imageURL).openStream();
+                bimage = BitmapFactory.decodeStream(in);
+
+            } catch (Exception e) {
+                Log.e("Error Message", e.getMessage());
+                e.printStackTrace();
+            }
+            return bimage;
+        }
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
 
     /*

@@ -30,11 +30,12 @@ public class BookContent {
 
 //cargamos los valores para tener datos por defecto
 
+    /* Esto era usado para la carga en local.
     static {
-        /*
+
          * solucionado el tema de la fecha usando calendario. Se crea una instancia de calendario, ya que se trata de
          * una interfaz. Metemos año, mes y día y finalmente hacemos un getTime que nos da la Date correspondiente.
-         */
+
         Log.d("validando--->>>","paso por additem");
         addItem(new BookItem(1, "El mundo invertido", "Christopher Priest", creaDate(2018, 10, 2), "La ciudad avanza por medio de raíles, surcando una tierra devastada llena de tribus hostiles. Los raíles deben ir colocándose delante de ella al tiempo que se progresa y ser retirados cuidadosamente tras su estela. Los ríos y las montañas suponen un obstáculo casi insalvable para el ingenio de los técnicos de la ciudad. Pero si se detiene su movimiento, la ciudad va cayendo en el campo gravitacional destructor que ha transformado la vida en la Tierra. La única alternativa a la muerte es el avance. Helward Mann, un miembro de la élite de la ciudad, sabe mejor que nadie que su existencia pende de un hilo: está a punto de descubrir que el mundo exterior es infinitamente más extraño que su propio entorno, que tan bien cree conocer.", "imagen1"));
         addItem(new BookItem(2, "El Hobbit", "J.R.R. Tolkien", creaDate(2017, 12, 2), "Bilbo Baggins lleva una vida sencilla con sus compañeros hobbits en la comarca, hasta que el mago Gandalf llega y lo convence de unirse a un grupo de enanos para recuperar el reino de Erebor. El viaje lleva a Bilbo en un camino a través de tierras peligrosas llenas de orcos, goblins y otras amenazas, además de su encuentro con Gollum y un sencillo anillo de oro que está unido al destino de la Tierra Media de una forma que Bilbo no puede imaginarse.", "imagen2"));
@@ -47,6 +48,7 @@ public class BookContent {
         addItem(new BookItem(9, "El orgullo de Chanur", "C.J.Cherryh", creaDate(2003, 4, 12), "Los comerciantes hani y sus antiguos enemigos, los kif, coexisten en precaria paz en la estación Punto de Encuentro. Hasta que el Extraño aparece y provoca la gran conmoción que acabará poniendo en peligro el pacto interestelar entre diversas especies. La capitana hani Pyanfar Chanur deberá afrontar la persecución de los kif, con la ayuda de los mahendo sat y la constante presencia de los misteriosos knnn. Y todo ello sin olvidar la defensa de la mismísima casa de Chanur en su planeta natal.", "imagen9"));
 
     }
+    */
 
     static public Date creaDate(Integer anyo, Integer mes, Integer dia) {
         Log.d("validando--->>>", "paso por creadate");
