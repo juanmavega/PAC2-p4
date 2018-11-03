@@ -93,7 +93,7 @@ public class BookListActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-        dbreference =database.getReference();
+        dbreference = database.getReference();
         // Sólo funciona si se entra con un usuario diferente del que lo ha creado!!!
         validar("juanma.atlantica1@gmail.com", "1234567890");
         View recyclerView = findViewById(R.id.book_list);
@@ -102,11 +102,11 @@ public class BookListActivity extends AppCompatActivity {
 
     }
 
-private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
+    private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         //Pongo mAdapter en una variable para poder luego usarlo para el refresco.
         mAdapter = new SimpleItemRecyclerViewAdapter(this, BookContent.ITEMS, mTwoPane);
         recyclerView.setAdapter(mAdapter);
-        Log.d(TAG,"paso por setuprecyclerview");
+        Log.d(TAG, "paso por setuprecyclerview");
     }
 
     public static class SimpleItemRecyclerViewAdapter
@@ -224,7 +224,7 @@ private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         }
 
         /*
-         * Asigna a las variables qiue luego usaremos que textview vamos a usar en cada caso
+         * Asigna a las variables que luego usaremos que textview vamos a usar en cada caso
          * buscándolos por su id en el xml
          */
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -239,6 +239,10 @@ private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         }
     }
 
+    /*
+     * Añade un listener para cuando hayamos podido acceder con éxito.
+     * En ese caso pide la lista de libros.
+     */
     private void validar(String email, String password) {
         Log.d(TAG, "pasando por validar");
         mAuth.signInWithEmailAndPassword(email, password)
@@ -252,7 +256,7 @@ private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                        }else {
+                        } else {
                             // creo el addValueEventListener para ir controlando cada vez que se cambian
                             // los datos.
                             pedirlistalibros();
@@ -263,28 +267,28 @@ private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
     }
 
     /*
-    Añade un listener para que cuando haya cambios en el listado de la base de datos
-    vuelva a cargar los libros de nuevo.
+     * Añade un listener para que cuando haya cambios en el listado de la base de datos
+     * vuelva a cargar los libros de nuevo.
      */
-    void pedirlistalibros(){
+    void pedirlistalibros() {
         dbreference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Inicializamos el índice, ITEMS e ITEM_MAP.
                 //recordar de que ind ha de ser el valor del número de registro, no un contador.
-                Log.d(TAG, "El datasnapshot padre "+dataSnapshot.toString());
+                Log.d(TAG, "El datasnapshot padre " + dataSnapshot.toString());
                 BookContent.ITEMS.clear();
                 BookContent.ITEM_MAP.clear();
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //con este segundo getchildren debería estar ya a nivel de libro.
 
-                    Log.d(TAG, "El postsnapshot "+postSnapshot.toString());
-                    for (DataSnapshot postSnapshot2: postSnapshot.getChildren()) {
-                        Log.d(TAG, "El postsnapshot2 "+postSnapshot2.getKey());
+                    Log.d(TAG, "El postsnapshot " + postSnapshot.toString());
+                    for (DataSnapshot postSnapshot2 : postSnapshot.getChildren()) {
+                        Log.d(TAG, "El postsnapshot2 " + postSnapshot2.getKey());
                         recargaLista(postSnapshot2, Integer.parseInt(postSnapshot2.getKey()));
                     }
                     //Pasamos el aviso al Adaptador que ha cambiado el dataset y que se ha de actualizar.
-mAdapter.notifyDataSetChanged();
+                    mAdapter.notifyDataSetChanged();
                 }
             }
 
@@ -297,33 +301,33 @@ mAdapter.notifyDataSetChanged();
         });
     }
 
-    private void recargaLista(DataSnapshot snap, Integer indice){
+    private void recargaLista(DataSnapshot snap, Integer indice) {
         fecha = snap.child("publication_date").getValue().toString();
         Log.d(TAG, "prueba fecha--->>" + fecha);
-        Log.d(TAG, "prueba fecha--->>" + fecha.substring(0,2)+ "-"+fecha.substring(3,5)+"-"+fecha.substring(6));
+        Log.d(TAG, "prueba fecha--->>" + fecha.substring(fecha.lastIndexOf("/")+1)
+                                        + "-" + fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/"))
+                                        + "-" + fecha.substring(0, fecha.indexOf("/")));
 
         Log.d(TAG, "indice--------->>" + indice);
         Log.d(TAG, "autor---------->>" + snap.child("author").getValue().toString());
         Log.d(TAG, "titulo--------->>" + snap.child("title").getValue().toString());
-        Log.d(TAG, "fecha---------->>" + fecha.substring(1,2)+ "-"+fecha.substring(4,5)+"-"+fecha.substring(6));
+        Log.d(TAG, "fecha---------->>" + fecha.substring(1, 2) + "-" + fecha.substring(4, 5) + "-" + fecha.substring(6));
         Log.d(TAG, "descripcion---->>" + snap.child("description").getValue().toString());
         Log.d(TAG, "url------------>>" + snap.child("url_image").getValue().toString());
 
         //creadate usa año, mes día. cuidado!!!
+
+        int anyo = Integer.valueOf(fecha.substring(fecha.lastIndexOf("/")+1));
+        int mes = Integer.valueOf(fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/")));
+        int dia = Integer.valueOf(fecha.substring(0, fecha.indexOf("/")));
+        Date date = creaDate(anyo, mes, dia);
         BookContent.addItem(new BookItem(
                 indice,
                 snap.child("author").getValue().toString(),
                 snap.child("title").getValue().toString(),
-                /*
-                creaDate(Integer.parseInt(fecha.substring(0,3)),
-
-                         Integer.parseInt(fecha.substring(3,5)),
-                         Integer.parseInt(fecha.substring(6))),
-                 */
-                new Date(2012,12,12), //SOLUCIONAR!!!
+                date,
                 snap.child("description").getValue().toString(),
                 snap.child("url_image").getValue().toString()));
-
     }
 
 }

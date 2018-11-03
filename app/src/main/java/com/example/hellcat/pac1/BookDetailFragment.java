@@ -58,7 +58,7 @@ public class BookDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         /*
-        * Si existe la key procede a buscar el elemento
+         * Si existe la key procede a buscar el elemento
          */
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             // Load the dummy content specified by the fragment
@@ -66,14 +66,6 @@ public class BookDetailFragment extends Fragment {
             // to load content from a content provider.
             mItem = BookContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
-            Activity activity = this.getActivity();
-            CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
-            /*
-            * si existe un BarLayout le asigna el título
-             */
-            if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.getTitulo());
-            }
         }
     }
 
@@ -81,6 +73,18 @@ public class BookDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.book_detail, container, false);
+        //esta es la parte que se ha movido del oncreate aquí para solucionar los problemas
+        // del cambio de vertical a horizontal.
+        Activity activity = this.getActivity();
+        CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
+        /*
+         * si existe un BarLayout le asigna el título
+         */
+        if (appBarLayout != null) {
+            appBarLayout.setTitle(mItem.getTitulo());
+        }
+        //fin de la parte que se ha movido desde el oncreate.
+
 
         // Si esiste un item lo muestra, asignando valores a los campos del layout
         if (mItem != null) {
@@ -101,6 +105,7 @@ public class BookDetailFragment extends Fragment {
         }
         return rootView;
     }
+
     // Se añaden los métodos asíncronos para la carga de la imagen.
     private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
@@ -122,6 +127,7 @@ public class BookDetailFragment extends Fragment {
             }
             return bimage;
         }
+
         protected void onPostExecute(Bitmap result) {
             imageView.setImageBitmap(result);
         }
