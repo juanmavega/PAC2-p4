@@ -32,7 +32,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Date;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+
 import static com.example.hellcat.pac1.model.BookContent.creaDate;
+
+
 
 /**
  * An activity representing a list of Books. This activity
@@ -42,6 +47,8 @@ import static com.example.hellcat.pac1.model.BookContent.creaDate;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
+
+
 public class BookListActivity extends AppCompatActivity {
 
     /**
@@ -63,6 +70,7 @@ public class BookListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_book_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -288,8 +296,12 @@ public class BookListActivity extends AppCompatActivity {
                         recargaLista(postSnapshot2, Integer.parseInt(postSnapshot2.getKey()));
                     }
                     //Pasamos el aviso al Adaptador que ha cambiado el dataset y que se ha de actualizar.
-                    mAdapter.notifyDataSetChanged();
+                    //mAdapter.notifyDataSetChanged();
                 }
+                //esto es para ver si se han incorporado los libros a la base de datos
+                Realm realm=Realm.getDefaultInstance();
+                RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();
+                Log.d("REALM--->>>", libros.toString());
             }
 
             @Override

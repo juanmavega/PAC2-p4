@@ -4,7 +4,7 @@
             "outputFile": "D:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ml\\values-ml.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\2402c1f1992e8e0b8fd61dc159a0c0f2\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\2f9b7515da6109118b811fb1cdb0625a\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\d517408add349fb5f708e2ccc9cf6bca\\res\\values-ml\\values-ml.xml",
+                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\3645a6b9728f7d5a6cb8d1d8ae1b0aae\\res\\values-ml\\values-ml.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4854",
+                        "endColumns": "100",
+                        "endOffsets": "4950"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.0.aar\\824ac92e67dbc02ff26bad0221417b05\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\a240cf6a9714ad8e49521405f4f6f44b\\res\\values-ml\\values.xml",
+                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\823acdf095fa86a4a3833d4636ecea88\\res\\values-ml\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,23 +69,6 @@
                         "startOffsets": "1922,2043,2254,2395,2518,2741,2868,3003,3357,3598,3716,3921,4059,4267,4458,4552,4651",
                         "endColumns": "120,210,140,122,222,126,134,134,240,117,204,137,207,190,93,98,120",
                         "endOffsets": "2038,2249,2390,2513,2736,2863,2998,3133,3593,3711,3916,4054,4262,4453,4547,4646,4767"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hellcat\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\7c0ae7eba43ed565124624ba810ed333\\res\\values-ml\\values-ml.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4854",
-                        "endColumns": "100",
-                        "endOffsets": "4950"
                     }
                 }
             ]

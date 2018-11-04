@@ -2,7 +2,9 @@ package com.example.hellcat.pac1.model;
 
 import java.util.Date;
 
-public class BookItem {
+import io.realm.RealmObject;
+
+public class BookItem extends RealmObject {
     private Integer identificador;
     private String titulo;
     private String autor;
@@ -61,9 +63,14 @@ public class BookItem {
         this.url = url;
     }
 
+    // Creado el constructor básico sin parámetros. Lo necesita Realm
+    public BookItem (){
+
+    }
     /*
      *   Creación del constructor de bookitem entrando todos sus valores.
      */
+
     public BookItem(Integer id, String titulo, String autor, Date fecha, String descripcion, String url) {
         this.identificador = id;
         this.titulo = titulo;

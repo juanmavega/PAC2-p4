@@ -27,6 +27,7 @@
     No hay servicios soplementarios ni receivers.
     -->
     <application
+        android:name="com.example.hellcat.pac1.MiAplicacion"
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"

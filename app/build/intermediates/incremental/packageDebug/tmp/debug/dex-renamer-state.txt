@@ -1,4 +1,4 @@
-#Wed Oct 31 13:25:28 CET 2018
+#Sun Nov 04 13:21:34 CET 2018
 path.1=classes.dex
 path.0=classes.dex
 renamed.10=classes11.dex
@@ -22,7 +22,7 @@ base.3=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\
 base.2=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\18
 base.1=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
 base.0=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
-base.10=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\21
+base.10=D\:\\Mis documentos\\JUANMA\\Projects\\AndroidStudioProjects\\PAC1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.10=classes.dex
 path.9=classes.dex
 path.8=classes.dex
