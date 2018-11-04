@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
+import io.realm.Sort;
 
 /**
  * Creamos la clase BookContent para los procedimientos de creación
@@ -54,20 +56,50 @@ public class BookContent {
     public static void addItem(final BookItem item) {
         //coje la instancia por defecto de realm creada en el Aplication de inicio
         Realm realm=Realm.getDefaultInstance();
-        //Incorpora el item, que ya tiene formato realm a la base de datos
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                realm.copyToRealmOrUpdate(item);
-            }
-        });
+        //Incorpora el item, que ya tiene formato realm a la base de datos. Primero compruebo si existe, y si no lo añado.
+        RealmResults<BookItem> result = realm.where(BookItem.class)
+                .equalTo("titulo", item.getTitulo())
+                .findAll();
+        if (result.isEmpty()) {
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    realm.copyToRealm(item);
+                }
+            });
+        }
         //cierro la transacción?
         realm.close();
         //Creación de las listas de items desde Firebase. Sistema antiguo.
+        /*
         Log.d("validando--->>>", "paso por additem");
         ITEMS.add(item);
         ITEM_MAP.put(Integer.toString(item.getIdentificador()), item);
 
         Log.d("validando--->>>", "salgo de additem");
+        */
+    }
+
+    //Genera la lista de libros de la base de datos. ¿se ha de pasar a la lista o así ya está bien?
+    public static List<BookItem> getBooks(){
+
+        Realm realm=Realm.getDefaultInstance();
+        RealmResults<BookItem> result = realm.where(BookItem.class)
+                .sort("title", Sort.ASCENDING)
+                .findAll();
+        realm.close();
+
+        return result;      //devuelve la lista de libros?
+    }
+
+    //comprueba la existencia de un libro.
+    public static boolean exists(BookItem bookItem) {
+
+        Realm realm=Realm.getDefaultInstance();
+        RealmResults<BookItem> result = realm.where(BookItem.class)
+                .equalTo("titulo", bookItem.getTitulo())
+                .findAll();
+        realm.close();
+        return !result.isEmpty();   // si está vacio devuelve exist igual a false y viceversa.
     }
 }

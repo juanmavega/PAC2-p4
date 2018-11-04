@@ -3,6 +3,7 @@ package com.example.hellcat.pac1;
 import android.app.Application;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 //Lo añadimos para poder inicializar Realm sin que nos inicialice cada vez que se reinicie la actívity.
 //Se añade también en eñ android manifest.
 

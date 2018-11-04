@@ -3,9 +3,11 @@ package com.example.hellcat.pac1.model;
 import java.util.Date;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
 public class BookItem extends RealmObject {
-    private Integer identificador;
+    private Integer identificador;      //De momento no cogemos identificador como primary Key porque no nos lo dan, lo generamos nosotros
     private String titulo;
     private String autor;
     private Date fecha;

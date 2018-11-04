@@ -128,11 +128,10 @@ public class BookListActivity extends AppCompatActivity {
         private final List<BookItem> mValues;
         private final boolean mTwoPane;
         private final int PAR = 0, IMPAR = 1;
+
         /*
          * acciones que se llevan a cabo cuando se ha hecho click sobre uno de los elementos
          */
-
-
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -275,7 +274,7 @@ public class BookListActivity extends AppCompatActivity {
     }
 
     /*
-     * Añade un listener para que cuando haya cambios en el listado de la base de datos
+     * Añade un listener para que cuando haya cambios en el listado de la base de datos de Firebase
      * vuelva a cargar los libros de nuevo.
      */
     void pedirlistalibros() {
@@ -298,6 +297,8 @@ public class BookListActivity extends AppCompatActivity {
                     //Pasamos el aviso al Adaptador que ha cambiado el dataset y que se ha de actualizar.
                     //mAdapter.notifyDataSetChanged();
                 }
+                //finalizado el ciclo for ya tendremos en Realm todos los valores, así que hacemos un getbooks.
+                BookContent.getBooks();
                 //esto es para ver si se han incorporado los libros a la base de datos
                 Realm realm=Realm.getDefaultInstance();
                 RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();
@@ -307,6 +308,7 @@ public class BookListActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
+                //Al no haber podido contactar con Firebase he de cargar los elementos de la base de datos almacenada, no los de firebase
                 Log.d(TAG, "loadPost:onCancelled", databaseError.toException());
                 // ...
             }
@@ -319,7 +321,6 @@ public class BookListActivity extends AppCompatActivity {
         Log.d(TAG, "prueba fecha--->>" + fecha.substring(fecha.lastIndexOf("/")+1)
                                         + "-" + fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/"))
                                         + "-" + fecha.substring(0, fecha.indexOf("/")));
-
         Log.d(TAG, "indice--------->>" + indice);
         Log.d(TAG, "autor---------->>" + snap.child("author").getValue().toString());
         Log.d(TAG, "titulo--------->>" + snap.child("title").getValue().toString());
