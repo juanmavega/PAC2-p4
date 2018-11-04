@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
@@ -80,16 +81,16 @@ public class BookContent {
         */
     }
 
-    //Genera la lista de libros de la base de datos. ¿se ha de pasar a la lista o así ya está bien?
+    //Genera la lista de libros de la base de datos. Lo paso as lista.
     public static List<BookItem> getBooks(){
 
         Realm realm=Realm.getDefaultInstance();
-        RealmResults<BookItem> result = realm.where(BookItem.class)
-                .sort("title", Sort.ASCENDING)
+        RealmResults<BookItem> listaLibros = realm.where(BookItem.class)
+                .sort("titulo", Sort.ASCENDING)
                 .findAll();
+        List <BookItem> results = realm.copyFromRealm(listaLibros);
         realm.close();
-
-        return result;      //devuelve la lista de libros?
+        return results;      //devuelve la lista de libros
     }
 
     //comprueba la existencia de un libro.

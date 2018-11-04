@@ -36,7 +36,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 import static com.example.hellcat.pac1.model.BookContent.creaDate;
-
+import static com.example.hellcat.pac1.model.BookContent.getBooks;
 
 
 /**
@@ -62,6 +62,7 @@ public class BookListActivity extends AppCompatActivity {
     private String TAG = "validando--->>>";
     private String fecha;
     private SimpleItemRecyclerViewAdapter mAdapter;
+    private List<BookItem> mValue;
 
     /*
      * Crea la activity usando el layout activity_book_list. Se crea una barra superior con una toolbar
@@ -112,7 +113,8 @@ public class BookListActivity extends AppCompatActivity {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         //Pongo mAdapter en una variable para poder luego usarlo para el refresco.
-        mAdapter = new SimpleItemRecyclerViewAdapter(this, BookContent.ITEMS, mTwoPane);
+        mValue=BookContent.getBooks();
+        mAdapter = new SimpleItemRecyclerViewAdapter(this, mValue, mTwoPane);
         recyclerView.setAdapter(mAdapter);
         Log.d(TAG, "paso por setuprecyclerview");
     }
@@ -162,7 +164,7 @@ public class BookListActivity extends AppCompatActivity {
                      * añade en el intent un string "item_id", con objeto de que podamos localizarlo, y un string de valor que en micaso es
                      * el número de identificador pasado a string.
                      */
-                    intent.putExtra(BookDetailFragment.ARG_ITEM_ID, Integer.toString(item.getIdentificador()));
+                    intent.putExtra(BookDetailFragment.ARG_ITEM_ID, item.getTitulo());
 
                     context.startActivity(intent);
                 }
@@ -298,7 +300,6 @@ public class BookListActivity extends AppCompatActivity {
                     //mAdapter.notifyDataSetChanged();
                 }
                 //finalizado el ciclo for ya tendremos en Realm todos los valores, así que hacemos un getbooks.
-                BookContent.getBooks();
                 //esto es para ver si se han incorporado los libros a la base de datos
                 Realm realm=Realm.getDefaultInstance();
                 RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();

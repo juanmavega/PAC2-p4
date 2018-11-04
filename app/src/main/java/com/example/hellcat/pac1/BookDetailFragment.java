@@ -28,6 +28,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+
 /**
  * A fragment representing a single Book detail screen.
  * This fragment is either contained in a {@link BookListActivity}
@@ -59,14 +62,22 @@ public class BookDetailFragment extends Fragment {
 
         /*
          * Si existe la key procede a buscar el elemento
-         */
+
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
             mItem = BookContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 
-        }
+        }*/
+        //Dado que no tenemos id, paso el título y lo busco en la base de datos en vez de pasar por toda la lista.
+        //Evitamos así tambien el generar el item map.
+
+        Realm realm=Realm.getDefaultInstance();
+        BookItem libro = realm.where(BookItem.class)
+                .like("titulo",getArguments().getString(ARG_ITEM_ID)).findFirst();
+        mItem=libro;
+        realm.close();
     }
 
     @Override
