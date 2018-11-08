@@ -2,7 +2,6 @@ package com.example.hellcat.pac1;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.hellcat.pac1.model.BookContent;
-import com.example.hellcat.pac1.model.BookContent2;
 import com.example.hellcat.pac1.model.BookItem;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,7 +34,6 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 import static com.example.hellcat.pac1.model.BookContent.creaDate;
-import static com.example.hellcat.pac1.model.BookContent.getBooks;
 
 
 /**
@@ -104,7 +101,7 @@ public class BookListActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         dbreference = database.getReference();
         // Sólo funciona si se entra con un usuario diferente del que lo ha creado!!!
-        validar("juanma.atlantica1@gmail.com", "1234567890");
+        validarFB("juanma.atlantica1@gmail.com", "1234567890");
         View recyclerView = findViewById(R.id.book_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
@@ -113,7 +110,7 @@ public class BookListActivity extends AppCompatActivity {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         //Pongo mAdapter en una variable para poder luego usarlo para el refresco.
-        mValue=BookContent.getBooks();
+        mValue = BookContent.getBooks();
         mAdapter = new SimpleItemRecyclerViewAdapter(this, mValue, mTwoPane);
         recyclerView.setAdapter(mAdapter);
         Log.d(TAG, "paso por setuprecyclerview");
@@ -249,10 +246,10 @@ public class BookListActivity extends AppCompatActivity {
     }
 
     /*
-     * Añade un listener para cuando hayamos podido acceder con éxito.
+     * Añade un listener para cuando hayamos podido acceder con éxito a Firebase.
      * En ese caso pide la lista de libros.
      */
-    private void validar(String email, String password) {
+    private void validarFB(String email, String password) {
         Log.d(TAG, "pasando por validar");
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -268,7 +265,7 @@ public class BookListActivity extends AppCompatActivity {
                         } else {
                             // creo el addValueEventListener para ir controlando cada vez que se cambian
                             // los datos.
-                            pedirlistalibros();
+                            getListaLibrosFB();
                         }
                         // ...
                     }
@@ -279,7 +276,7 @@ public class BookListActivity extends AppCompatActivity {
      * Añade un listener para que cuando haya cambios en el listado de la base de datos de Firebase
      * vuelva a cargar los libros de nuevo.
      */
-    void pedirlistalibros() {
+    void getListaLibrosFB() {
         dbreference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -299,11 +296,10 @@ public class BookListActivity extends AppCompatActivity {
                     //Pasamos el aviso al Adaptador que ha cambiado el dataset y que se ha de actualizar.
                     //mAdapter.notifyDataSetChanged();
                 }
-                //finalizado el ciclo for ya tendremos en Realm todos los valores, así que hacemos un getbooks.
-                //esto es para ver si se han incorporado los libros a la base de datos
-                Realm realm=Realm.getDefaultInstance();
-                RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();
-                Log.d("REALM--->>>", libros.toString());
+                //  esto es para ver si se han incorporado los libros a la base de datos
+                //  Realm realm=Realm.getDefaultInstance();
+                //  RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();
+                //  Log.d("REALM--->>>", libros.toString());
             }
 
             @Override
@@ -315,13 +311,14 @@ public class BookListActivity extends AppCompatActivity {
             }
         });
     }
-
+    //  hacemos los pasos previos para la gestión de la fecha y luego hacemos el additem de los datos
+    //  de Firebase a los de Realm. No hacemos comprobación de unicidad aquí, lo hacemos en additem.
     private void recargaLista(DataSnapshot snap, Integer indice) {
         fecha = snap.child("publication_date").getValue().toString();
         Log.d(TAG, "prueba fecha--->>" + fecha);
-        Log.d(TAG, "prueba fecha--->>" + fecha.substring(fecha.lastIndexOf("/")+1)
-                                        + "-" + fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/"))
-                                        + "-" + fecha.substring(0, fecha.indexOf("/")));
+        Log.d(TAG, "prueba fecha--->>" + fecha.substring(fecha.lastIndexOf("/") + 1)
+                + "-" + fecha.substring(fecha.indexOf("/") + 1, fecha.lastIndexOf("/"))
+                + "-" + fecha.substring(0, fecha.indexOf("/")));
         Log.d(TAG, "indice--------->>" + indice);
         Log.d(TAG, "autor---------->>" + snap.child("author").getValue().toString());
         Log.d(TAG, "titulo--------->>" + snap.child("title").getValue().toString());
@@ -331,8 +328,8 @@ public class BookListActivity extends AppCompatActivity {
 
         //creadate usa año, mes día. cuidado!!!
 
-        int anyo = Integer.valueOf(fecha.substring(fecha.lastIndexOf("/")+1));
-        int mes = Integer.valueOf(fecha.substring(fecha.indexOf("/")+1, fecha.lastIndexOf("/")));
+        int anyo = Integer.valueOf(fecha.substring(fecha.lastIndexOf("/") + 1));
+        int mes = Integer.valueOf(fecha.substring(fecha.indexOf("/") + 1, fecha.lastIndexOf("/")));
         int dia = Integer.valueOf(fecha.substring(0, fecha.indexOf("/")));
         Date date = creaDate(anyo, mes, dia);
         BookContent.addItem(new BookItem(
