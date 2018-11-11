@@ -25,13 +25,15 @@ public class BookContent {
      * Creación de ITEMS como objeto que podrá ser accedido por el resto de clases como variable constante.
      * Es la lista de BookItems usada en el recyclerview
      */
-    public static final List<BookItem> ITEMS = new ArrayList<BookItem>();
+    //ya no lo usamos en Realm
+    //public static final List<BookItem> ITEMS = new ArrayList<BookItem>();
     private String TAG = "validando--->>>";
 
     /**
      * Como lo anterior, pero en Map se añade una key para fácil localización de un item determinado por su valor de key
      */
-    public static final Map<String, BookItem> ITEM_MAP = new HashMap<String, BookItem>();
+    //ya no lo usamos en Realm
+    //public static final Map<String, BookItem> ITEM_MAP = new HashMap<String, BookItem>();
 
     static public Date creaDate(Integer anyo, Integer mes, Integer dia) {
         Log.d("validando--->>>", "paso por creadate");

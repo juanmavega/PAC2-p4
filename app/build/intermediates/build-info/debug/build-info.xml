@@ -6,28 +6,28 @@
     density="mdpi"
     format="10"
     plugin-version="3.2.1"
-    timestamp="1541670457733"
+    timestamp="1541953789894"
     token="1293102596406675845"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1559" />
+        duration="1825" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="15" />
+        duration="22" />
     <task
         name="verifier"
-        duration="6" />
+        duration="8" />
 
     <artifact
-        location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
         location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
@@ -65,13 +65,13 @@
 
     <build
         build-mode="FULL"
-        timestamp="1541670457733"
+        timestamp="1541953789894"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="D:\Mis documentos\JUANMA\Projects\AndroidStudioProjects\PAC1\app\build\intermediates\split-apk\debug\slices\slice_5.apk"

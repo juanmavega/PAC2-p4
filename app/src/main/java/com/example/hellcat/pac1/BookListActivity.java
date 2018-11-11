@@ -144,7 +144,7 @@ public class BookListActivity extends AppCompatActivity {
                      * si no abre la nueva actividad de detalle.
                      */
                     Bundle arguments = new Bundle();
-                    arguments.putString(BookDetailFragment.ARG_ITEM_ID, Integer.toString(item.getIdentificador()));
+                    arguments.putString(BookDetailFragment.ARG_ITEM_ID, item.getTitulo());
                     BookDetailFragment fragment = new BookDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -263,8 +263,8 @@ public class BookListActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
                         } else {
-                            // creo el addValueEventListener para ir controlando cada vez que se cambian
-                            // los datos.
+                            // Si la conexión funciona obtenemos la lista de libros de Firebase y
+                            // la añadimos a Realm en el mismo proceso.
                             getListaLibrosFB();
                         }
                         // ...
@@ -283,8 +283,8 @@ public class BookListActivity extends AppCompatActivity {
                 //Inicializamos el índice, ITEMS e ITEM_MAP.
                 //recordar de que ind ha de ser el valor del número de registro, no un contador.
                 Log.d(TAG, "El datasnapshot padre " + dataSnapshot.toString());
-                BookContent.ITEMS.clear();
-                BookContent.ITEM_MAP.clear();
+                //BookContent.ITEMS.clear();
+                //BookContent.ITEM_MAP.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //con este segundo getchildren debería estar ya a nivel de libro.
 
@@ -334,8 +334,8 @@ public class BookListActivity extends AppCompatActivity {
         Date date = creaDate(anyo, mes, dia);
         BookContent.addItem(new BookItem(
                 indice,
-                snap.child("author").getValue().toString(),
                 snap.child("title").getValue().toString(),
+                snap.child("author").getValue().toString(),
                 date,
                 snap.child("description").getValue().toString(),
                 snap.child("url_image").getValue().toString()));

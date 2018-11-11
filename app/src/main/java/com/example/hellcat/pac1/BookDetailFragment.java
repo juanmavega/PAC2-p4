@@ -71,13 +71,13 @@ public class BookDetailFragment extends Fragment {
 
         }*/
         //Dado que no tenemos id, paso el título y lo busco en la base de datos en vez de pasar por toda la lista.
-        //Evitamos así tambien el generar el item map.
+        //Evitamos así tambien el generar el item map. Da problemas si hacemos un close de Realm.
 
         Realm realm=Realm.getDefaultInstance();
         BookItem libro = realm.where(BookItem.class)
                 .like("titulo",getArguments().getString(ARG_ITEM_ID)).findFirst();
         mItem=libro;
-        realm.close();
+        //realm.close();
     }
 
     @Override
