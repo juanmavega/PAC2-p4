@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hellcat.pac1.model.BookContent;
 import com.example.hellcat.pac1.model.BookItem;
@@ -128,6 +129,13 @@ public class BookListActivity extends AppCompatActivity {
         private final boolean mTwoPane;
         private final int PAR = 0, IMPAR = 1;
 
+
+
+        public void setItems(List<BookItem> items) {
+            // ya uso otras funciones para la carga de la base de datos de FB y de Realm.
+            // ============ INICIO CODIGO A COMPLETAR ===============
+            // ============ FIN CODIGO A COMPLETAR ===============
+        }
         /*
          * acciones que se llevan a cabo cuando se ha hecho click sobre uno de los elementos
          */
@@ -261,6 +269,9 @@ public class BookListActivity extends AppCompatActivity {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
+                            // Si la conexión no ha funcionado en el momento de crear el recyclerview se pide la lista de libros de
+                            // Realm almacenada ya en el dispositivo. Si no ha habido una conexión correcta la lista aparece vacía.
+                            mostrarToast ("No ha sido posible conectar con la base de datos.");
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
                         } else {
                             // Si la conexión funciona obtenemos la lista de libros de Firebase y
@@ -270,6 +281,9 @@ public class BookListActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+    void mostrarToast(String texto){
+        Toast.makeText(this,texto,Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -305,12 +319,14 @@ public class BookListActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
-                //Al no haber podido contactar con Firebase he de cargar los elementos de la base de datos almacenada, no los de firebase
+                // Al no haber podido contactar con Firebase he de cargar los elementos de la base de datos almacenada,
+                // no los de firebase.
                 Log.d(TAG, "loadPost:onCancelled", databaseError.toException());
                 // ...
             }
         });
     }
+
     //  hacemos los pasos previos para la gestión de la fecha y luego hacemos el additem de los datos
     //  de Firebase a los de Realm. No hacemos comprobación de unicidad aquí, lo hacemos en additem.
     private void recargaLista(DataSnapshot snap, Integer indice) {
