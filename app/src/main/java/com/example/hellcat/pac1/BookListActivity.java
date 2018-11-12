@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -103,9 +104,25 @@ public class BookListActivity extends AppCompatActivity {
         dbreference = database.getReference();
         // Sólo funciona si se entra con un usuario diferente del que lo ha creado!!!
         validarFB("juanma.atlantica1@gmail.com", "1234567890");
-        View recyclerView = findViewById(R.id.book_list);
+        final View recyclerView = findViewById(R.id.book_list);
         assert recyclerView != null;
+
+        if (null==findViewById(R.id.swipeContainer)) Log.d(TAG, "findview es nulo");
         setupRecyclerView((RecyclerView) recyclerView);
+        final SwipeRefreshLayout swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // vuelvo a pedir la lista de libros de fireBase
+                getListaLibrosFB();
+                // si está todavía funcionando la animación de swipecontainer la paro,
+                // ya que ya tendremos los nuevos datos.
+                if (swipeContainer.isRefreshing()) {
+                    swipeContainer.setRefreshing(false);
+                }
+            }
+        });
 
     }
 
@@ -297,8 +314,6 @@ public class BookListActivity extends AppCompatActivity {
                 //Inicializamos el índice, ITEMS e ITEM_MAP.
                 //recordar de que ind ha de ser el valor del número de registro, no un contador.
                 Log.d(TAG, "El datasnapshot padre " + dataSnapshot.toString());
-                //BookContent.ITEMS.clear();
-                //BookContent.ITEM_MAP.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //con este segundo getchildren debería estar ya a nivel de libro.
 
@@ -308,12 +323,11 @@ public class BookListActivity extends AppCompatActivity {
                         recargaLista(postSnapshot2, Integer.parseInt(postSnapshot2.getKey()));
                     }
                     //Pasamos el aviso al Adaptador que ha cambiado el dataset y que se ha de actualizar.
-                    //mAdapter.notifyDataSetChanged();
+
+                    Log.d(TAG, "actualizando mValue");
+                    mValue=BookContent.getBooks();
+                    mAdapter.notifyDataSetChanged();
                 }
-                //  esto es para ver si se han incorporado los libros a la base de datos
-                //  Realm realm=Realm.getDefaultInstance();
-                //  RealmResults<BookItem> libros = realm.where(BookItem.class).findAll();
-                //  Log.d("REALM--->>>", libros.toString());
             }
 
             @Override
